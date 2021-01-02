@@ -6,7 +6,8 @@ RUN apt-get install libpq-dev
 RUN gem install bundler
 RUN gem install jets
 
-COPY * /mydemo/
+COPY Gemfile /mydemo/
+COPY Gemfile.lock /mydemo/
 
 WORKDIR /mydemo
 
