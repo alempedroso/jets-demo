@@ -1,0 +1,13 @@
+*
+!/app
+!/config
+!/db
+!/public
+!/spec
+!.rspec
+!.jetskeep
+!.config.ru
+!Gemfile
+!Gemfile.lock
+!Procfile
+!Rakefile

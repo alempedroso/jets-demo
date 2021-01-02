@@ -1,0 +1,29 @@
+
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - .:/mydemo
+    ports:
+      - "8888:8888"
+    depends_on:
+      - postgres
+    command: bundle exec jets server --host 0.0.0.0
+
+  postgres:
+    image: postgres:12.2
+    environment:
+      POSTGRES_DB: mydemo_development
+      POSTGRES_USER: mydemo
+      POSTGRES_PASSWORD: mydemo
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - 5432:5432
+
+volumes:
+  postgres:
